@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using RecruitCatWadawash.Data;
+using Gtt.Uc.EntityFramework;
+
 
 namespace RecruitCatWadawash
 {
@@ -23,6 +27,10 @@ namespace RecruitCatWadawash
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            // services.AddDbContext<RecruitCatWadawashContext>(options =>
+            //      options.UseSqlServer(Configuration.GetConnectionString("RecruitCatWadawashContext")));
+            services.AddGttMem <RecruitCatWadawashContext>("c77132ed-9b0e-40d1-bfb1-0c690ed9f3f1");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
