@@ -1,0 +1,65 @@
+﻿@page
+@model FinalProject.Pages.Sellyourcars.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit @Model.Sellyourcar.Seller</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Sellyourcar.Id" />
+            <div class="form-group">
+                <label asp-for="Sellyourcar.ModelNo" class="control-label"></label>
+                <input asp-for="Sellyourcar.ModelNo" class="form-control" />
+                <span asp-validation-for="Sellyourcar.ModelNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sellyourcar.Seller" class="control-label"></label>
+                <input asp-for="Sellyourcar.Seller" class="form-control" />
+                <span asp-validation-for="Sellyourcar.Seller" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sellyourcar.ModelName" class="control-label"></label>
+                <input asp-for="Sellyourcar.ModelName" class="form-control" />
+                <span asp-validation-for="Sellyourcar.ModelName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sellyourcar.YearBought" class="control-label"></label>
+                <input asp-for="Sellyourcar.YearBought" class="form-control" />
+                <span asp-validation-for="Sellyourcar.YearBought" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sellyourcar.CostPrice" class="control-label"></label>
+                <input asp-for="Sellyourcar.CostPrice" class="form-control" />
+                <span asp-validation-for="Sellyourcar.CostPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Sellyourcar.PartMissing" /> @Html.DisplayNameFor(model => model.Sellyourcar.PartMissing)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Sellyourcar.PartDamage" /> @Html.DisplayNameFor(model => model.Sellyourcar.PartDamage)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

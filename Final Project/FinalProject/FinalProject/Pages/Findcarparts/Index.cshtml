@@ -1,0 +1,62 @@
+﻿@page
+@model FinalProject.Pages.Findcarparts.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<body style="font-family:Cambria; color:black;">
+    <h1>Details of Car parts</h1>
+
+    <p>
+        <a asp-page="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Findcarpart[0].PartName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Findcarpart[0].PartValue)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Findcarpart[0].IsItObsolete)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Findcarpart[0].PartModelNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Findcarpart[0].Manufacturer)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Findcarpart)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PartName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PartValue)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsItObsolete)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PartModelNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Manufacturer.Name)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

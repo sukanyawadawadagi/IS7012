@@ -1,0 +1,46 @@
+﻿@page
+@model FinalProject.Pages.LoginModel
+@{
+}
+
+
+<body style="font-family:Cambria; color:black;">
+    <style>
+        h1 {
+            color: brown;
+            font-size: x-large;
+        }
+
+        h2 {
+            color: coral;
+            font-size: xx-large;
+        }
+    </style>
+    <h1 class="heading">Profile Login</h1>
+
+
+    <fieldset id="pypmgl_login">
+        <div class="form-item">
+            <label for="pypmgl_username" class="label--blue">Username</label>
+            <input id="pypmgl_username" class="pyp_input" type="text" placeholder="Username" tabindex="0" maxlength="10" pattern=".{3,50}" required="required" autocomplete="username" title="Please Enter Your Username.">
+        </div>
+        <div class="form-item">
+            <label for="pypmgl_password" class="label--blue">Password</label>
+            <input id="pypmgl_password" class="pyp_input" type="password" placeholder="Password" tabindex="0" maxlength="10" pattern=".{6,100}" required="required" autocomplete="current-password" title="Please Enter Your Password.">
+        </div>
+        <div class="form-item">
+            <button id="pypmgl_loginButton" class="button" type="submit" tabindex="0">Log In</button>
+        </div>
+
+    </fieldset>
+    <fieldset id="pypmgl_loginOptions" class="text">
+        <div class="form-item">
+            <input id="pypmgl_stayLoggedIn" tabindex="0" type="checkbox" checked>
+            <label id="pypmgl_stayLoggedInLbl" for="pypmgl_stayLoggedIn">Stay Logged In</label>
+        </div>
+    </fieldset>
+
+
+
+
+</body>

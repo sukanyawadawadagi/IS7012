@@ -1,0 +1,46 @@
+﻿@page
+@model FinalProject.Pages.Bookappointments.StatisticModel
+
+@{
+    ViewData["Title"] = "Statistic";
+}
+
+<body style="font-family:Cambria; color:black;">
+    <style>
+        h1 {
+            color: brown;
+            font-size: x-large;
+        }
+
+        h2 {
+            color: coral;
+            font-size: xx-large;
+        }
+    </style>
+
+    <div class="row">
+        <div class="col-sm-6">
+
+            <h1>Our Statistics</h1>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoZqmgyyUyHQM6bzZ6iTLsGAgwS87JioWr2w&usqp=CAU" width="400" height=auto>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="/Sellyourcars/Index">Total Cars for Sale</a>
+                    <span class="badge badge-primary badge-pill">@Model.TotalCars</span>
+
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="/Findcarparts/Index">Total Parts for Sale</a>
+                    <span class="badge badge-primary badge-pill">@Model.TotalParts</span>
+
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="/Manufacturers/Index">Total Manufacturer</a>
+                    <span class="badge badge-primary badge-pill">@Model.TotalManuf</span>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>

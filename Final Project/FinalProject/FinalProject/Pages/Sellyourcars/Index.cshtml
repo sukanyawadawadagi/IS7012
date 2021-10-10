@@ -1,0 +1,74 @@
+﻿@page
+@model FinalProject.Pages.Sellyourcars.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<body style="font-family:Cambria; color:black;">
+    <h1>Cars on Sale</h1>
+
+    <p>
+        <a asp-page="Create">Create New car entry to sell</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sellyourcar[0].ModelNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sellyourcar[0].Seller)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sellyourcar[0].ModelName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sellyourcar[0].YearBought)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sellyourcar[0].CostPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sellyourcar[0].PartMissing)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sellyourcar[0].PartDamage)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Sellyourcar)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModelNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Seller)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModelName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.YearBought)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CostPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PartMissing)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PartDamage)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <</body>

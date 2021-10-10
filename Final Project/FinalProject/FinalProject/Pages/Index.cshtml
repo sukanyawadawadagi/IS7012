@@ -1,0 +1,215 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "UC Garage";
+}
+
+<body style="font-family:Cambria; color:black;">
+    <style>
+        h1 {
+            color: brown;
+            font-size: x-large;
+        }
+
+        h2 {
+            color: coral;
+            font-size: xx-large;
+        }
+    </style>
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome to UC Garage</h1>
+    </div>
+
+    <div class='row'>
+        <div class="col-sm-7">
+            <h2>SELL YOUR CAR!</h2>
+            <h1>PICK YOUR PARTS!</h1>
+            <p>
+                UC Garage is the nation's largest buyer of used vehicles, with salvage yards across the country. We purchase over 600,000 used cars & trucks each year, and we would like to purchase yours regardless of the condition. Because of our experience, we are the best source for affordable, high-quality auto parts. Click the link below to sell your car or find the part you need at the location nearest you!
+                
+            </p>
+            
+        </div>
+        <div class="col-sm-5">
+            <p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSx04wDMB63jXlz9sc74GPpJPXAuVAboRvw&usqp=CAU" height="300" width=auto>
+            </p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-4">
+            <p>
+                <img src="https://www.lkqpickyourpart.com/desktopmodules/mvc/home/images/home-tow.jpg" width=100% height=auto>
+            </p>
+        </div>
+
+        <div class="col-sm-8">
+            <p class="text-left">
+                <h2>SELL YOUR CAR</h2>
+                <h1>WE’LL PICK IT UP!</h1>
+                Want to sell your car quick? Need a junk car removed? Get a free quote now from the country's leading used car buyers.
+
+                UC Garage will buy your unwanted vehicle 7 days a week. Do you have an old car, truck or van that you would like to get rid of? Maybe a junk car or scrap truck? We buy all vehicles running or not. Get a free instant online quote and see how much you can get paid! We have been recycling vehicles for over 30 years and can lend our experience to help you get the best when selling your vehicle. Your vehicle doesn't run? No problem! We will arrange towing services for your vehicle.
+            </p>
+        </div>
+    </div>
+
+
+
+
+    <div class="wideBox">
+        <h1>Sales 2020</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-5">
+            <div id="piechart"></div>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+                // Load google charts
+                google.charts.load('current', { 'packages': ['corechart'] });
+                google.charts.setOnLoadCallback(drawChart);
+
+                // Draw the chart and set the chart values
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ['Cars', 'Sales'],
+                        ['Tesla', 8],
+                        ['Jeep', 2],
+                        ['Chevrolet', 4],
+                        ['Ford', 2],
+                        ['BMW', 2],
+                        ['Lincoln', 2],
+                        ['Chrysler', 4],
+                    ]);
+
+                    // Optional; add a title and set the width and height of the chart
+                    var options = { 'title': 'Car Sales', 'width': 550, 'height': 400 };
+
+                    // Display the chart inside the <div> element with id="piechart"
+                    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                    chart.draw(data, options);
+                }
+            </script>
+        </div>
+
+        <div class="col-sm-2">
+            <table id="chartData">
+                <tr>
+                    <th><br><br><br>Cars</th>
+                    <th><br><br><br>Sales ($)</th>
+                </tr>
+
+                <tr style="color: #0DA068">
+                    <td>Tesla</td>
+                    <td>1862.12</td>
+                </tr>
+
+                <tr style="color: #194E9C">
+                    <td>Jeep</td>
+                    <td>1316.00</td>
+                </tr>
+
+                <tr style="color: #ED9C13">
+                    <td>Chevrolet</td>
+                    <td>712.49</td>
+                </tr>
+
+                <tr style="color: #ED5713">
+                    <td>Ford</td>
+                    <td>3236.27</td>
+                </tr>
+
+                <tr style="color: #057249">
+                    <td>BMW</td>
+                    <td>6122.06</td>
+                </tr>
+
+                <tr style="color: #5F91DC">
+                    <td>Lincoln</td>
+                    <td>128.11</td>
+                </tr>
+
+                <tr style="color: #F88E5D">
+                    <td>Chrysler</td>
+                    <td>245.55</td>
+                </tr>
+            </table>
+
+
+        </div>
+
+        <div class="col-sm-5">
+            <div id="wrapper">
+                <div class="chart">
+                    <br><br>
+                    <h2>Top three state sales</h2><table id="data-table" border="1" cellpadding="10" cellspacing="0" summary="Top three state sales">
+                        <caption>Sales in million dollars</caption>
+                        <thead><tr><td>&nbsp;</td><th scope="col">2016</th><th scope="col">2017</th><th scope="col">2018</th><th scope="col">2019</th><th scope="col">2020</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">Ohio</th><td>4080</td><td>6080</td><td>6240</td><td>3520</td><td>2240</td></tr>
+                            <tr><th scope="row">Texas</th><td>5680</td><td>6880</td><td>6240</td><td>5120</td><td>2640</td></tr>
+                            <tr><th scope="row">California</th><td>1040</td><td>1760</td><td>2880</td><td>4720</td><td>7520</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h2>Our Current Availability </h2>
+            <p>Have a look at our cars available for sale, parts on sale and associated manufacturers.</p>
+            <a href="/Bookappointments/Statistic">Click here</a>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <img src="data:image/jpeg;base64,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1GmnfLIXm3osX6BD+aj/AGGfcn8nw/mo/wBhn3LKRdezZuC17WT/ABHqsdtIwbmMHc1o+SyERbi2S0JJzRERFhERERERERERERERERERERFiSUbHSNlcLuY0ht9wvvNuay0WQSMlgtBz+bkREWFlERERERERUssd1HGd8bD3sb9yyURASMli/wAnw/mo/wBhn3K9lOwbmNHc0L3RFkuccyi8pYw4FrhcOBBB3EHQheqIsUXL6XCzBiccR3CdpYTxZe7T5C3eCuoKNrsLZLLFMdHwuuCOIIPVPZc3/wCVJLZxrRWGPxv6rs3HMCh51ue/PvRERaqvRERERERERERERERERERERERERERERERERUuqEKhaiK66pnC8zGVYYiiL3zhU6QLHMBVv0c80RZecJnCxhAVcISiLIzBLryEauDUReiK0JmRFcitzJnRFciszpnRFeiszpnRFcSrSUzpnRFaXFWF5XrmCXCIscylWmZ3JZWiWCIsUTO5K4SFZNglgiLxDyrw4r0sEsiK0FXAqqIiIiIiIiIiIiIiIiIiIiIiIiIipdUurlSyIrbqhKusqEIitzK0uV5arcqIrS5WlyvLVTKiKwvVpkV5YqFqIrDIrTKvTIrejRFb0ydMrujTo0RWiVXCROjV2REVBIrg9MqqGIiByuDkyqoaiIHK7MqBqqGoiqCq3QBVsiJdVulksiKqIiIiIiIiIiIv/2Q==">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <p class="text-center">
+                <strong>“Highly Recommended!”</strong><br>
+                Highly recommend! Vaishnavi went above and beyond to make everything go smoothly! Car is amazing! <br><br>
+                <i>-Gary Rzonca</i>
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <p class="text-center">
+                <strong>“5 Stars!”</strong><br>
+                I would definitely recommend Sukanya. Not only did we get a great deal, he was very easy to work with and made the process simple and fast.<br><br>
+                <i>-Paul Schneider</i>
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <p class="text-center">
+                <strong>“Great Experience!”</strong><br>
+                Great buying experience. Great cars with rare features. I would definitely go back for my next car.<br><br>
+                <i>-Dave Larson</i>
+            </p>
+        </div>
+    </div>
+
+    <div class="blocks">
+        <h2 style="text-align:center"><br> <br>Protecting the environment</h2>
+        <p>
+            UC Garage recycles each used auto to reduce landfill waste, as well as provide low-cost alternatives to new car parts. Each vehicle has all of the fluids recycled or reused, including the Freon, mercury switches and tires. All of the metals are sorted and recycled. UC Garage has a rigorous program to reuse all of the used auto parts that can be remanufactured such as alternators, starters and air compressors. In 2014, UC Garage recycled 2,498,885 gallons of gasoline, 499,577 of oil, 499,777 gallons of antifreeze and 749,666 tons of steel. Repairing your car with used or remanufactured parts reduces energy consumption and conserves our valuable natural resources.
+
+            UC Garage has set the standard for environmental practices and continues to raise the bar by exceeding Federal and State guidelines. We have standardized our best management practices for managing used autos and hazardous wastes. UC Garage’s commitment to the environment and the communities we serve sets us apart from traditional junk yards.
+        </p>
+        <a class="footer__nav-item" href="/Contactus/">Contact us</a>
+    </div>
+
+</body>
+
+
+
+
+
+

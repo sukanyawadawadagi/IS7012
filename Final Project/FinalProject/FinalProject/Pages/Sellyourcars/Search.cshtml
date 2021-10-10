@@ -1,0 +1,115 @@
+﻿@page
+@model FinalProject.Pages.Sellyourcars.SearchModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<body style="font-family:Cambria; color:black;">
+    <style>
+        h1 {
+            color: brown;
+            font-size: x-large;
+        }
+
+        h2 {
+            color: coral;
+            font-size: xx-large;
+        }
+    </style>
+    <h1>Search Cars and Statistics </h1>
+
+
+    <div class="row">
+        <div class="col">
+            <form action="" method="get" class="form-inline">
+                <input asp-for="Query" class="form-control mr-sm-2 mb-2" placeholder="Search Model Number" />
+                <button type="Submit" class="btn btn-primary mb-2">Search</button>
+
+            </form>
+        </div>
+    </div>
+
+    @if (Model.SearchCompleted)
+    {
+        if (Model.Sellyourcar.Any())
+        {
+            <p>Car exists</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Sellyourcar[0].ModelNo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Sellyourcar[0].Seller)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Sellyourcar[0].ModelName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Sellyourcar[0].YearBought)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Sellyourcar[0].CostPrice)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Sellyourcar[0].PartMissing)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Sellyourcar[0].PartDamage)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Sellyourcar)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ModelNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Seller)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ModelName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.YearBought)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CostPrice)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PartMissing)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PartDamage)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+
+        }
+        else
+        {
+            <div class="row">
+                <div class="col">
+                    <div class="alert-info">
+                        No result match your Model number <strong>@Model.Query</strong>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+</body>
